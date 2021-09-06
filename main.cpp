@@ -65,6 +65,7 @@ std::vector<std::string> get_files_by_ext(const char *ext){
 
 
 void dump_data( std::string &file_name ){
+#ifdef DUMP_DATA	    
     std::string dump_file_name = file_name; 
     size_t  index = dump_file_name.find(".wav", 0);
     dump_file_name.replace(index, 4, ".dat");
@@ -88,6 +89,7 @@ void dump_data( std::string &file_name ){
     }     
     dump_file.close();    
     printf( "finish dump\n");
+#endif
     return;
 }
 
